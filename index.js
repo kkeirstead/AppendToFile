@@ -15,7 +15,7 @@ const main = async () => {
     const textToSearch = core.getInput('textToSearch', { required: true });
     const textToAdd = core.getInput('textToAdd', { required: true });
     const insertFileName = core.getInput('insertFileName', { required: false});
-    const paths = core.getInput('paths', {required: true});
+    const paths = core.getInput('paths', {required: false});
 
 
     for (const path of paths.split(' ')) {

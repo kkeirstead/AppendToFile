@@ -12,7 +12,7 @@ inputs:
     required: false
   paths:
     description: 'Paths to the changed files'
-    required: true
+    required: false
 runs:
   using: 'node16'
   main: 'index.js'
