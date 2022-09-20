@@ -34,7 +34,7 @@ const main = async () => {
                 }
                 content += "\n" + updatedTextToAdd;
 
-                fs.writeFile(path, updatedContent);
+                fs.writeFile(path, content);
             }
         });
     }
