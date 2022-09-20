@@ -12,6 +12,18 @@ inputs:
     required: true
   token:
     description: 'The token to use to access the GitHub API'
+    default: ${{ github.token }}
+  textToSearch:
+    description: 'The required text in a file'
+    required: true
+  textToAdd:
+    description: 'The required text to add to a file (if not present)'
+    required: true
+  insertFileName:
+    description: 'Specific to this use-case - add file-name for survey if set to true'
+    required: false
+  paths:
+    description: 'Paths to the changed files'
     required: true
 runs:
   using: 'node16'
