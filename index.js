@@ -25,13 +25,14 @@ const main = async () => {
 
             if (content.includes(textToSearch) == false)
             {
+                var updatedTextToAdd = textToAdd;
                 if (insertFileName == 'true' && textToAdd.includes("{insertFileName}"))
                 {
                     var pathWithoutExtension = path.split('.')[0];
                     var fileName = pathWithoutExtension.split('/').pop();
-                    textToAdd = textToAdd.replace("{insertFileName}", fileName);
+                    updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
                 }
-                content += "\n" + textToAdd;
+                content += "\n" + updatedTextToAdd;
 
                 fs.writeFile(path, updatedContent);
             }
