@@ -8,13 +8,13 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const owner = core.getInput('owner', { required: true });
-    const repo = core.getInput('repo', { required: true });
-    const pr_number = core.getInput('pr_number', { required: true });
-    const token = core.getInput('token', { required: true });
+    //const owner = core.getInput('owner', { required: true });
+    //const repo = core.getInput('repo', { required: true });
+    //const pr_number = core.getInput('pr_number', { required: true });
+    //const token = core.getInput('token', { required: true });
     const textToSearch = core.getInput('textToSearch', { required: true });
     const textToAdd = core.getInput('textToAdd', { required: true });
-    const insertParameter = core.getInput('insertParameter', { required: false});
+    const insertFileName = core.getInput('insertFileName', { required: false});
     const paths = core.getInput('paths', {required: true});
 
 
@@ -25,7 +25,7 @@ const main = async () => {
 
             if (content.includes(textToSearch) == false)
             {
-                if (textToAdd.includes("{insertFileName}"))
+                if (insertFileName == 'true' && textToAdd.includes("{insertFileName}"))
                 {
                     textToAdd = textToAdd.replace("{insertFileName}", file.fileName.split('.')[0])
                 }

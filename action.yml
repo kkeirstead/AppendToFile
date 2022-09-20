@@ -1,18 +1,6 @@
 name: 'AppendToFile Action'
 description: 'Appends text to a file (if it is not already there)'
 inputs:
-  owner:
-    description: 'The owner of the repository'
-    required: true
-  repo:
-    description: 'The name of the repository'
-    required: true
-  pr_number:
-    description: 'The number of the pull request'
-    required: true
-  token:
-    description: 'The token to use to access the GitHub API'
-    default: ${{ github.token }}
   textToSearch:
     description: 'The required text in a file'
     required: true
