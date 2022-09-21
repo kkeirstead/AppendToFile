@@ -33,7 +33,7 @@ const main = async () => {
                     updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
                 }
 
-                content = content.substring(0, content.length - 1) // Testing only
+                content = content.toString().substring(0, content.toString().length - 1) // Testing only
 
                 content += "\n" + updatedTextToAdd;
 
