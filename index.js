@@ -32,10 +32,13 @@ const main = async () => {
                     var fileName = pathWithoutExtension.split('/').pop();
                     updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
                 }
+
+                content = content.substring(0, content.length - 1) // Testing only
+
                 content += "\n" + updatedTextToAdd;
 
                 fs.writeFile(path, content, (err) => {
-                    
+
                 });
             }
         });
