@@ -33,11 +33,15 @@ const main = async () => {
                     updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
                 }
 
-                content = content.toString().substring(0, content.toString().length - 1) // Testing only
+                var contentStr = "abc";
 
-                content += "\n" + updatedTextToAdd;
+                //var contentStr = content.toString();
 
-                fs.writeFile(path, content, (err) => {
+                //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
+
+                contentStr += "\n" + updatedTextToAdd;
+
+                fs.writeFile(path, contentStr, (err) => {
 
                 });
             }
