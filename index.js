@@ -39,9 +39,9 @@ const main = async () => {
 
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr += "  " + updatedTextToAdd;
+                contentStr = updatedTextToAdd + "<br />" + contentStr;
 
-                contentStr = "  " + contentStr;
+                //contentStr = "  " + contentStr;
 
                 fs.writeFile(path, contentStr, (err) => {
 
