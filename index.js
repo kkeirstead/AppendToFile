@@ -37,17 +37,16 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
-                
-                var index = contentStr.indexOf("\n");
-                if (index !== -1) {
-                    contentStr = (contentStr.slice(0, index) + "\n\n" + updatedTextToAdd + "\n\n" + contentStr.slice(index));
-                }
+                // var index = contentStr.indexOf("\n");
+                // if (index !== -1) {
+                //     contentStr = (contentStr.slice(0, index) + "" + contentStr.slice(index));
+                // }
 
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                //contentStr = contentStr + "\n\n" + updatedTextToAdd + "\n\n";
+                contentStr += "\n" + updatedTextToAdd + "\n";
 
-                console.log(JSON.stringify(contentStr));
+                //console.log(JSON.stringify(contentStr));
 
                 //contentStr = "  " + contentStr;
 
