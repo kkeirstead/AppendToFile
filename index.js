@@ -37,14 +37,11 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
-                console.log(contentStr);
-
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr = updatedTextToAdd + " \
-                " + contentStr;
+                contentStr = updatedTextToAdd + "\n" + contentStr;
 
-                console.log(contentStr);
+                console.log(JSON.stringify(contentStr));
 
                 //contentStr = "  " + contentStr;
 
