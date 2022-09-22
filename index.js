@@ -37,9 +37,14 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
+                var index = contentStr.indexOf("\n");
+                if (index !== -1) {
+                    contentStr = contentStr.slice(0, index) + contentStr.slice(index + contentStr.length);
+                }
+
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr = updatedTextToAdd + "\n\n" + " " + contentStr;
+                contentStr = updatedTextToAdd + "\n\n" + contentStr;
 
                 console.log(JSON.stringify(contentStr));
 
