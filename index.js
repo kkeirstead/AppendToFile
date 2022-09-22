@@ -37,15 +37,15 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
-                /*
+                
                 var index = contentStr.indexOf("\n");
                 if (index !== -1) {
-                    contentStr = (contentStr.slice(0, index) + " TEST" + contentStr.slice(index));
-                }*/
+                    contentStr = (contentStr.slice(0, index) + "\n\n" + updatedTextToAdd + "\n\n" + contentStr.slice(index));
+                }
 
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr = contentStr + "\n\n" + updatedTextToAdd + "\n\n";
+                //contentStr = contentStr + "\n\n" + updatedTextToAdd + "\n\n";
 
                 console.log(JSON.stringify(contentStr));
 
