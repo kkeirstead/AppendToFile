@@ -41,6 +41,8 @@ const main = async () => {
 
                 contentStr += "  " + updatedTextToAdd;
 
+                contentStr = "  " + contentStr;
+
                 fs.writeFile(path, contentStr, (err) => {
 
                 });
