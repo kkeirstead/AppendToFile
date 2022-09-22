@@ -39,7 +39,7 @@ const main = async () => {
 
                 var index = contentStr.indexOf("\n");
                 if (index !== -1) {
-                    contentStr = (contentStr.slice(0, index) + contentStr.slice(index + 1));
+                    contentStr = (contentStr.slice(0, index) + " TEST" + contentStr.slice(index));
                 }
 
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
