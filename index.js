@@ -37,7 +37,7 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
-                contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
+                //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
                 contentStr += updatedTextToAdd;
 
