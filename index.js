@@ -37,9 +37,13 @@ const main = async () => {
 
                 var contentStr = content.toString();
 
+                console.log(contentStr);
+
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
                 contentStr = updatedTextToAdd + "<br />" + contentStr;
+
+                console.log(contentStr);
 
                 //contentStr = "  " + contentStr;
 
