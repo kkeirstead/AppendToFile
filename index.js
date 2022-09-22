@@ -41,7 +41,8 @@ const main = async () => {
 
                 //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr = updatedTextToAdd + "<br />" + contentStr;
+                contentStr = updatedTextToAdd + " \
+                " + contentStr;
 
                 console.log(contentStr);
 
