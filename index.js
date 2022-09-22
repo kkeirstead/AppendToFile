@@ -39,7 +39,7 @@ const main = async () => {
 
                 contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
 
-                contentStr += updatedTextToAdd;
+                contentStr += "/r/n" + updatedTextToAdd;
 
                 fs.writeFile(path, contentStr, (err) => {
 
