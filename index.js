@@ -17,44 +17,46 @@ const main = async () => {
     const insertFileName = core.getInput('insertFileName', { required: false});
     const paths = core.getInput('paths', {required: false});
 
+    if (paths != "")
+    {
+        for (const path of paths.split(' ')) {
 
-    for (const path of paths.split(' ')) {
-
-        fs.readFile(path, (err, content) => {
-            if (err) throw err;
-
-            if (content.includes(textToSearch) == false)
-            {
-                var updatedTextToAdd = textToAdd;
-                if (insertFileName == 'true' && textToAdd.includes("{insertFileName}"))
+            fs.readFile(path, (err, content) => {
+                if (err) throw err;
+    
+                if (content.includes(textToSearch) == false)
                 {
-                    var pathWithoutExtension = path.split('.')[0];
-                    var fileName = pathWithoutExtension.split('/').pop();
-                    updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
+                    var updatedTextToAdd = textToAdd;
+                    if (insertFileName == 'true' && textToAdd.includes("{insertFileName}"))
+                    {
+                        var pathWithoutExtension = path.split('.')[0];
+                        var fileName = pathWithoutExtension.split('/').pop();
+                        updatedTextToAdd = textToAdd.replace("{insertFileName}", fileName);
+                    }
+    
+                    //var contentStr = "abc";
+    
+                    var contentStr = content.toString();
+    
+                    // var index = contentStr.indexOf("\n");
+                    // if (index !== -1) {
+                    //     contentStr = (contentStr.slice(0, index) + "" + contentStr.slice(index));
+                    // }
+    
+                    //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
+    
+                    contentStr += "\n" + updatedTextToAdd + "\n";
+    
+                    //console.log(JSON.stringify(contentStr));
+    
+                    //contentStr = "  " + contentStr;
+    
+                    fs.writeFile(path, contentStr, (err) => {
+    
+                    });
                 }
-
-                //var contentStr = "abc";
-
-                var contentStr = content.toString();
-
-                // var index = contentStr.indexOf("\n");
-                // if (index !== -1) {
-                //     contentStr = (contentStr.slice(0, index) + "" + contentStr.slice(index));
-                // }
-
-                //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
-
-                contentStr += "\n" + updatedTextToAdd + "\n";
-
-                //console.log(JSON.stringify(contentStr));
-
-                //contentStr = "  " + contentStr;
-
-                fs.writeFile(path, contentStr, (err) => {
-
-                });
-            }
-        });
+            });
+        }
     }
 
     // /**
