@@ -45,7 +45,7 @@ const main = async () => {
     
                     //contentStr = contentStr.substring(0, contentStr.length - 1) // Testing only
     
-                    contentStr += updatedTextToAdd + "\n\n";
+                    contentStr = updatedTextToAdd + "\n\n" + contentStr;
     
                     //console.log(JSON.stringify(contentStr));
     
