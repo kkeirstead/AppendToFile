@@ -25,7 +25,7 @@ const main = async () => {
                     {
                         var encodedURI = encodeURIComponent(path);
                         //var fileName = path.split('/').pop();
-                        var encodedURIWIthoutExtension = encodedURI.substring(0, encodedURI.length() - 3) // remove the .md at the end
+                        var encodedURIWIthoutExtension = encodedURI.substring(0, encodedURI.length - 3) // remove the .md at the end
                         updatedTextToAdd = textToAdd.replace(insertFileNameParameter, encodedURIWIthoutExtension);
                     }
     
