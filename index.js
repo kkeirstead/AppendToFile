@@ -10,7 +10,7 @@ const main = async () => {
 
     const insertFileNameParameter = "{insertFileName}";
 
-    if (myStr !== null && myStr.trim() !== "")
+    if (paths !== null && paths.trim() !== "")
     {
         for (const path of paths.split(' ')) {
 
