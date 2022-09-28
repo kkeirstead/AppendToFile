@@ -6,25 +6,23 @@ const main = async () => {
   try {
     const textToSearch = core.getInput('textToSearch', { required: true });
     const textToAdd = core.getInput('textToAdd', { required: true });
-    const insertFileName = core.getInput('insertFileName', { required: false});
     const paths = core.getInput('paths', {required: false});
 
     const insertFileNameParameter = "{insertFileName}";
 
-    if (paths != "")
+    if (myStr !== null && myStr.trim() !== "")
     {
         for (const path of paths.split(' ')) {
 
             fs.readFile(path, (err, content) => {
                 if (err) throw err;
     
-                if (content.includes(textToSearch) == false)
+                if (!content.includes(textToSearch))
                 {
                     var updatedTextToAdd = textToAdd;
-                    if (insertFileName == 'true' && textToAdd.includes(insertFileNameParameter))
+                    if (textToAdd.includes(insertFileNameParameter))
                     {
                         var encodedURI = encodeURIComponent(path);
-                        //var fileName = path.split('/').pop();
                         var encodedURIWIthoutExtension = encodedURI.substring(0, encodedURI.length - 3) // remove the .md at the end
                         updatedTextToAdd = textToAdd.replace(insertFileNameParameter, encodedURIWIthoutExtension);
                     }
