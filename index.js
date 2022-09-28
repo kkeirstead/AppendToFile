@@ -23,9 +23,9 @@ const main = async () => {
                     var updatedTextToAdd = textToAdd;
                     if (insertFileName == 'true' && textToAdd.includes(insertFileNameParameter))
                     {
-                        var pathWithoutExtension = path.split('.')[0];
-                        var fileName = pathWithoutExtension.split('/').pop();
-                        updatedTextToAdd = textToAdd.replace(insertFileNameParameter, fileName);
+                        var fileName = path.split('/').pop();
+                        var fileNameWithoutExtension = path.split('.')[0];
+                        updatedTextToAdd = textToAdd.replace(insertFileNameParameter, fileNameWithoutExtension);
                     }
     
                     var contentStr = content.toString();
